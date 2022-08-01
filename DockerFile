@@ -7,5 +7,5 @@ RUN mvn -f /home/app/pom.xml clean package
 # Create an Image
 FROM openjdk:8-jdk-alpine
 EXPOSE 5000
-COPY --from=stage1 /home/app/target/spring-docker.jar spring-docker.jar
+COPY --from=stage1 /home/app/target/docker-spring.jar docker-spring.jar
 ENTRYPOINT ["sh", "-c", "java -jar /spring-docker.jar"]
